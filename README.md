@@ -1,4 +1,4 @@
-# SalesTaxWithMethods project
+# Project Instructions
 
 This project will be to take the logic you did in
 the previous project and split that logic into individual
@@ -47,10 +47,13 @@ push your changes to GitHub.
 In IntelliJ there's a terminal already open you can use, or you can do this in
 your own terminal as long as you navigated to the project directory.
 
-In the terminal type the following commands:
-git add .
-git commit -m "summary of your changes"
-git push
+In the terminal type the following commands:<br>
+
+git add .<br>
+
+git commit -m "summary of your changes"<br>
+
+git push<br>
 
 At any point you can type: git status
 This will give you the status of your changes, whether you added
