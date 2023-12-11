@@ -31,7 +31,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.2</version>
                 <configuration>
-                    <test>**/*Test.java</test>
+                    <test>**/*Tests.java</test>
                 </configuration>
             </plugin>
         </plugins>
