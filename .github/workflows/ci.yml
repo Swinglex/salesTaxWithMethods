@@ -1,14 +1,6 @@
-name: Java
-
+name: 'CI'
 on:
-# Allow manual runs of workflow
-  workflow_dispatch:
-
-# Permissions required for test-reporter https://github.com/dorny/test-reporter
-permissions:
-  contents: read
-  actions: read
-  checks: write
+  pull_request:
 
 jobs:
   build:
@@ -36,12 +28,3 @@ jobs:
         with:
           name: testResults
           path: /home/runner/work/junit-example/junit-example/target/surefire-reports
-
-      - name: Report
-        uses: dorny/test-reporter@v1
-        if: always()
-        with:
-          name: Maven Tests
-          path: target/surefire-reports/*.xml
-          reporter: java-junit
-          fail-on-error: true
