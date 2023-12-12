@@ -1,27 +1,46 @@
 package org.example;
 
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-       /*Setup any variables you need and call your methods
-       * here in the main method */
+        System.out.println("Hello James, congrats on feeling better! :D");
+
+        final double stateTaxRate = 0.04;
+        final double countyTaxRate = 0.02;
+
+        double purchasePrice = inputPurchasePrice();
+
+        double stateTax = calculateTax(purchasePrice, stateTaxRate);
+        double countyTax = calculateTax(purchasePrice, countyTaxRate);
+        double totalTax = calculateTotal(stateTax, countyTax);
+        double totalPrice = calculateTotal(purchasePrice, totalTax);
+
+        displayTotals(purchasePrice, stateTax, countyTax, totalTax, totalPrice);
     }
 
-    /* Write a method called inputPurchasePrice that
-    *  takes the user input for price, converts to
-    *  a double, and returns the price as a double
-    * */
+    public static double inputPurchasePrice() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the price of the item:");
+        return Double.valueOf(scanner.nextLine());
+    }
 
-    /* Write a method called calculateTax that
-     * accepts a double called price and a double called
-     * tax rate as parameters and calculates and returns the tax
-     * */
+    public static double calculateTax(double price, double taxRate) {
+        return price * (taxRate / 100.0);
+    }
 
-    /* Write a method called calculateTotal that
-     * accepts two double values and returns the sum
-     * */
+    public static double calculateTotal(double value1, double value2) {
+        return value1 + value2;
+    }
 
-    /* Write a method called displayTotals that takes
-    *  purchasePrice, stateTax, countyTax, totalTax and totalPrice
-    *  as double parameters. Output using decimal formatter amd printf */
+    public static void displayTotals(double purchasePrice, double stateTax, double countyTax, double totalTax, double totalPrice) {
+        DecimalFormat decimalFormat = new DecimalFormat("#.##"); // Format to two decimal places
 
+        System.out.println("Purchase Price: $" + decimalFormat.format(purchasePrice));
+        System.out.println("State Tax: $" + decimalFormat.format(stateTax));
+        System.out.println("County Tax: $" + decimalFormat.format(countyTax));
+        System.out.println("Total Tax: $" + decimalFormat.format(totalTax));
+        System.out.println("Total Price: $" + decimalFormat.format(totalPrice));
+    }
 }
