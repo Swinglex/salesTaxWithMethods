@@ -1,6 +1,7 @@
 name: Java
 
 on:
+  push:
 # Allow manual runs of workflow
   workflow_dispatch:
 
