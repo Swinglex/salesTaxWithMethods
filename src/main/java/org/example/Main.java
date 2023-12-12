@@ -35,7 +35,7 @@ public class Main {
     }
 
     public static void displayTotals(double purchasePrice, double stateTax, double countyTax, double totalTax, double totalPrice) {
-        DecimalFormat decimalFormat = new DecimalFormat("#.##"); // Format to two decimal places
+        DecimalFormat decimalFormat = new DecimalFormat("#.##"); // Format to two decimal places (notes to self)
 
         System.out.println("Purchase Price: $" + decimalFormat.format(purchasePrice));
         System.out.println("State Tax: $" + decimalFormat.format(stateTax));
