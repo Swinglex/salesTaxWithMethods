@@ -9,8 +9,7 @@ permissions:
   actions: read
   checks: write
 jobs:
-  build:
-    name: Build and Run Tests
+  report:
     runs-on: ubuntu-latest
     steps:
     - name: Report
